@@ -113,4 +113,8 @@ public class PlayerController : MonoBehaviour
     void SetCanJumpToTrue() {
         canJump = true;
     }
+
+    public void Die() {
+        Debug.Log("Sammy Lost");
+    }
 }

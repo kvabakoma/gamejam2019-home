@@ -26,7 +26,9 @@ public class EnemyController : MonoBehaviour
             if (health<1) {
                 Die();
             }
-        }        
+        } else if (other.transform.gameObject.layer == 9) {
+            other.transform.gameObject.GetComponent<PlayerController>().Die();
+        }      
     }
 
     private void Die() {
