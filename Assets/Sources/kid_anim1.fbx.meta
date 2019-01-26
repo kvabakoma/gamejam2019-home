@@ -59,6 +59,10 @@ ModelImporter:
     100106: Root_Leg_R_
     100108: Root_Main
     100110: Root_Tail
+    100112: CINEMA_4D_Editor
+    100114: End_Leg_03_L__Goal
+    100116: End_Leg_03_R__Goal
+    100118: Plane
     400000: End_Arm_09_L_
     400002: End_Arm_09_R_
     400004: End_Foot_03_L_
@@ -115,13 +119,22 @@ ModelImporter:
     400106: Root_Leg_R_
     400108: Root_Main
     400110: Root_Tail
+    400112: CINEMA_4D_Editor
+    400114: End_Leg_03_L__Goal
+    400116: End_Leg_03_R__Goal
+    400118: Plane
+    2000000: CINEMA_4D_Editor
     2100000: No Name
+    2100002: Material
     2300000: Mesh_Gun
+    2300002: Plane
     3300000: Mesh_Gun
+    3300002: Plane
     4300000: Mesh_Gun
     4300002: Mesh_Boy
     4300004: Mesh_Hat
     4300006: Mesh_Hair
+    4300008: Plane
     7400000: CINEMA_4D_Main
     7400002: Run
     9500000: //RootNode
@@ -188,7 +201,7 @@ ModelImporter:
       name: Run
       takeName: Run
       firstFrame: 0
-      lastFrame: 39
+      lastFrame: 25
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
