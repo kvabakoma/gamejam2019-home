@@ -676,12 +676,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bone: {fileID: 623066121}
-  Speed: 10
-  JumpSpeed: 15
-  Gravity: 20
-  AirFriction: 0.1
-  BodyAdditionalAngleLeft: -90
-  BodyAdditionalAngleRight: 0
+  speed: 10
+  jumpSpeed: 20
+  gravity: 20
+  bodyAdditionalAngleLeft: -90
+  bodyAdditionalAngleRight: 0
 --- !u!143 &1011527101
 CharacterController:
   m_ObjectHideFlags: 0

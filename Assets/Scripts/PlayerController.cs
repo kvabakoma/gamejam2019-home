@@ -17,7 +17,6 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Bone.transform.localEulerAngles = new Vector3(0, Bone.transform.localEulerAngles.y, Bone.transform.localEulerAngles.z);
         startRotation = Bone.transform.localEulerAngles;
         characterController = GetComponent<CharacterController>();
     }
@@ -34,17 +33,6 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("RightStickX");
         float y = Input.GetAxis("RightStickY");
         if (x != 0.0f || y != 0.0f) {
-            /*
-            if (!playerIsLookingLeft) angle = Mathf.Atan2(x, y) * Mathf.Rad2Deg;
-
-            float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;            
-            
-            Vector3 controllerAngle = new Vector3( 
-                angle + BodyAdditionalAngle,
-                // angle + 180,
-                startRotation.y,
-                startRotation.z
-            ); */
             Vector3 controllerAngle;
 
             if (playerIsLookingLeft) {
@@ -63,7 +51,7 @@ public class PlayerController : MonoBehaviour
                 );
             }
             Bone.transform.localEulerAngles = controllerAngle;
-            Debug.Log(Bone.transform.eulerAngles);
+            // Debug.Log(Bone.transform.eulerAngles + " | " + Bone.transform.localEulerAngles);
         }
 
         // Debug.Log("H: " + Input.GetAxis("Horizontal") + " | V: " + Input.GetAxis("Vertical"));
@@ -96,14 +84,24 @@ public class PlayerController : MonoBehaviour
     }
 
     void Flip() {
-        if (transform.localScale.x > 0 && moveDirection.x > 0) {
+        // Debug.Log(Input.GetAxis("RightStickX"));
+        if (Input.GetAxis("RightStickX") > 0 && playerIsLookingLeft) {
             transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            Debug.Log("turn right");
-            playerIsLookingLeft = false;
-        } else if (transform.localScale.x < 0 && moveDirection.x < 0) {
+            Debug.Log("turned around");
+            playerIsLookingLeft = !playerIsLookingLeft;
+        } else if (Input.GetAxis("RightStickX") < 0 && !playerIsLookingLeft) {
             transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            Debug.Log("turn left");
-            playerIsLookingLeft = true;
+            Debug.Log("turned around");
+            playerIsLookingLeft = !playerIsLookingLeft;
         }
+    }
+
+    void MyDebugStuff() {
+        Debug.Log("----- START");
+        transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        playerIsLookingLeft = !playerIsLookingLeft;
+        Debug.Log("----- END");
+
+        Invoke("MyDebugStuff", 10f);
     }
 }
