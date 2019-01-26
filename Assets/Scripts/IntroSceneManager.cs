@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class IntroSceneManager : MonoBehaviour
 {
 
-    public GameObject OpeningPage, Button;
+    public GameObject OpeningPage, Button, Music;
 
     void Start()
     {
@@ -30,7 +30,7 @@ public class IntroSceneManager : MonoBehaviour
 
         // Set the video to play. URL supports local absolute or relative paths.
         // Here, using absolute.
-        videoPlayer.url = "Assets/Sources/INTRO.mp4";
+        videoPlayer.url = "Assets/Sources/INTRO_sound.mp4";
         // videoPlayer.url = Resources.Load("INTRO.mp4");
 
         // Skip the first 100 frames.
@@ -54,11 +54,13 @@ public class IntroSceneManager : MonoBehaviour
         Debug.Log("ENDED");
         OpeningPage.SetActive(true);
         Button.SetActive(true);
-        GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;       
+        GetComponent<UnityEngine.Video.VideoPlayer>().enabled = false;  
+        Music.SetActive(true);
     }
 
     void Update() {
         if (Input.GetKeyDown("space") || Input.GetKeyDown("joystick button 2")) {
+            Music.SetActive(true);
             StartGame();
         }
     }

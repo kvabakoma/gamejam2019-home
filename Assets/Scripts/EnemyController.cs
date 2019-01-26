@@ -20,13 +20,13 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.name);
         if (other.transform.gameObject.layer == 12) {
             health--;
             if (health<1) {
                 Die();
             }
-        } else if (other.transform.gameObject.layer == 9) {
+        } else if (other.transform.gameObject.layer == 9) {            
+            Debug.Log(other.name);
             other.transform.gameObject.GetComponent<PlayerController>().Die();
         }      
     }

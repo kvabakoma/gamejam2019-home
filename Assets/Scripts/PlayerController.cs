@@ -10,10 +10,11 @@ public class PlayerController : MonoBehaviour
     public float gravity = 20.0f;
     public float bodyAdditionalAngleLeft, bodyAdditionalAngleRight;
     public Animator animController;
+    public GameObject Canvas;
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
     private CharacterController characterController;
-    private bool playerIsLookingLeft = true, canJump;
+    private bool playerIsLookingLeft = true, canJump, playerIsAlive = true;
     
 
     // Start is called before the first frame update
@@ -26,9 +27,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Aim();
-        Move();
-        Flip();
+        if (playerIsAlive) {
+            Aim();
+            Move();
+            Flip();
+        }        
     }
 
     void Aim() {
@@ -115,6 +118,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Die() {
-        Debug.Log("Sammy Lost");
+        playerIsAlive = false;
+        Canvas.SetActive(true);
+        // Debug.Log("Sammy Lost");
     }
 }
