@@ -9,10 +9,12 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public float bodyAdditionalAngleLeft, bodyAdditionalAngleRight;
+    public Animator animController;
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
     private CharacterController characterController;
     private bool playerIsLookingLeft = true;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -33,12 +35,12 @@ public class PlayerController : MonoBehaviour
         float x = Input.GetAxis("RightStickX");
         float y = Input.GetAxis("RightStickY");
         if (x != 0.0f || y != 0.0f) {
-            Vector3 controllerAngle;
+            Vector3 controllerAngle;            
 
             if (playerIsLookingLeft) {
                 float angle = Mathf.Atan2(y, x) * Mathf.Rad2Deg;   
                     controllerAngle = new Vector3( 
-                    angle + bodyAdditionalAngleLeft,
+                    angle + bodyAdditionalAngleLeft,                   
                     startRotation.y,
                     startRotation.z
                 );
@@ -50,7 +52,7 @@ public class PlayerController : MonoBehaviour
                     startRotation.z
                 );
             }
-            Bone.transform.localEulerAngles = controllerAngle;
+            Bone.transform.localEulerAngles = controllerAngle;            
             // Debug.Log(Bone.transform.eulerAngles + " | " + Bone.transform.localEulerAngles);
         }
 
@@ -71,16 +73,19 @@ public class PlayerController : MonoBehaviour
             {
                 moveDirection.y = jumpSpeed;
             }
+
+            animController.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal"))); 
         } else {
             // movement in-air
             moveDirection.x = Input.GetAxis("Horizontal") * speed * .9f;
+            animController.SetFloat("Speed", 0.0f); 
         }
         
         // Apply gravity
         moveDirection.y = moveDirection.y - (gravity * Time.deltaTime);
 
         // Move the controller
-        characterController.Move(moveDirection * Time.deltaTime);        
+        characterController.Move(moveDirection * Time.deltaTime);          
     }
 
     void Flip() {
@@ -94,12 +99,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void MyDebugStuff() {
-        Debug.Log("----- START");
-        transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-        playerIsLookingLeft = !playerIsLookingLeft;
-        Debug.Log("----- END");
+    // void MyDebugStuff() {
+    //     Debug.Log("----- START");
+    //     transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+    //     playerIsLookingLeft = !playerIsLookingLeft;
+    //     Debug.Log("----- END");
 
-        Invoke("MyDebugStuff", 10f);
-    }
+    //     Invoke("MyDebugStuff", 10f);
+    // }
 }

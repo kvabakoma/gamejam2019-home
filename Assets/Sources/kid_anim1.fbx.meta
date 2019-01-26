@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 3a100a48d4791ef41ae8b1258d0c82e1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: End_Arm_09_L_
+    100002: End_Arm_09_R_
+    100004: End_Foot_03_L_
+    100006: End_Foot_03_R_
+    100008: End_Head
+    100010: End_Hips
+    100012: End_Leg_03_L_
+    100014: End_Leg_03_R_
+    100016: End_Tail_04
+    100018: Gun
+    100020: Jnt_Arm_01_L_
+    100022: Jnt_Arm_01_R_
+    100024: Jnt_Arm_02_L_
+    100026: Jnt_Arm_02_R_
+    100028: Jnt_Arm_03_L_
+    100030: Jnt_Arm_03_R_
+    100032: Jnt_Arm_04_L_
+    100034: Jnt_Arm_04_R_
+    100036: Jnt_Arm_05_L_
+    100038: Jnt_Arm_05_R_
+    100040: Jnt_Arm_06_L_
+    100042: Jnt_Arm_06_R_
+    100044: Jnt_Arm_07_L_
+    100046: Jnt_Arm_07_R_
+    100048: Jnt_Arm_08_L_
+    100050: Jnt_Arm_08_R_
+    100052: Jnt_Foot_01_L_
+    100054: Jnt_Foot_01_R_
+    100056: Jnt_Foot_02_L_
+    100058: Jnt_Foot_02_R_
+    100060: Jnt_Head
+    100062: Jnt_Hips
+    100064: Jnt_Leg_01_L_
+    100066: Jnt_Leg_01_R_
+    100068: Jnt_Leg_02_L_
+    100070: Jnt_Leg_02_R_
+    100072: Jnt_Neck
+    100074: Jnt_Root
+    100076: Jnt_Tail_01
+    100078: Jnt_Tail_02
+    100080: Jnt_Tail_03
+    100082: //RootNode
+    100084: Kolio
+    100086: Mesh_Boy
+    100088: Mesh_Gun
+    100090: Mesh_Hair
+    100092: Mesh_Hat
+    100094: Root_Arm_L_
+    100096: Root_Arm_R_
+    100098: Root_Foot_L_
+    100100: Root_Foot_R_
+    100102: Root_Hips
+    100104: Root_Leg_L_
+    100106: Root_Leg_R_
+    100108: Root_Main
+    100110: Root_Tail
+    400000: End_Arm_09_L_
+    400002: End_Arm_09_R_
+    400004: End_Foot_03_L_
+    400006: End_Foot_03_R_
+    400008: End_Head
+    400010: End_Hips
+    400012: End_Leg_03_L_
+    400014: End_Leg_03_R_
+    400016: End_Tail_04
+    400018: Gun
+    400020: Jnt_Arm_01_L_
+    400022: Jnt_Arm_01_R_
+    400024: Jnt_Arm_02_L_
+    400026: Jnt_Arm_02_R_
+    400028: Jnt_Arm_03_L_
+    400030: Jnt_Arm_03_R_
+    400032: Jnt_Arm_04_L_
+    400034: Jnt_Arm_04_R_
+    400036: Jnt_Arm_05_L_
+    400038: Jnt_Arm_05_R_
+    400040: Jnt_Arm_06_L_
+    400042: Jnt_Arm_06_R_
+    400044: Jnt_Arm_07_L_
+    400046: Jnt_Arm_07_R_
+    400048: Jnt_Arm_08_L_
+    400050: Jnt_Arm_08_R_
+    400052: Jnt_Foot_01_L_
+    400054: Jnt_Foot_01_R_
+    400056: Jnt_Foot_02_L_
+    400058: Jnt_Foot_02_R_
+    400060: Jnt_Head
+    400062: Jnt_Hips
+    400064: Jnt_Leg_01_L_
+    400066: Jnt_Leg_01_R_
+    400068: Jnt_Leg_02_L_
+    400070: Jnt_Leg_02_R_
+    400072: Jnt_Neck
+    400074: Jnt_Root
+    400076: Jnt_Tail_01
+    400078: Jnt_Tail_02
+    400080: Jnt_Tail_03
+    400082: //RootNode
+    400084: Kolio
+    400086: Mesh_Boy
+    400088: Mesh_Gun
+    400090: Mesh_Hair
+    400092: Mesh_Hat
+    400094: Root_Arm_L_
+    400096: Root_Arm_R_
+    400098: Root_Foot_L_
+    400100: Root_Foot_R_
+    400102: Root_Hips
+    400104: Root_Leg_L_
+    400106: Root_Leg_R_
+    400108: Root_Main
+    400110: Root_Tail
+    2100000: No Name
+    2300000: Mesh_Gun
+    3300000: Mesh_Gun
+    4300000: Mesh_Gun
+    4300002: Mesh_Boy
+    4300004: Mesh_Hat
+    4300006: Mesh_Hair
+    7400000: CINEMA_4D_Main
+    7400002: Run
+    9500000: //RootNode
+    13700000: Mesh_Boy
+    13700002: Mesh_Hair
+    13700004: Mesh_Hat
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CINEMA_4D_Main
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
