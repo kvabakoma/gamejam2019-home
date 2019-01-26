@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
     private CharacterController characterController;
-    private bool playerIsLookingLeft = true;
+    private bool playerIsLookingLeft = true, canJump;
     
 
     // Start is called before the first frame update
@@ -61,24 +61,35 @@ public class PlayerController : MonoBehaviour
     }
 
     void Move() {
-        if (characterController.isGrounded) {
+        if (characterController.isGrounded) {  
             // We are grounded, so recalculate
             // move direction directly from axes
+
+            // canJump = true;
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * speed;
 
-            if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1)
-            {
+            if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
                 moveDirection.y = jumpSpeed;
+                // canJump = false;
+                // Invoke("SetCanJumpToTrue",.2f);
             }
 
             animController.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal"))); 
         } else {
+            Debug.Log("NOT GROUNDEEEEED");
             // movement in-air
             moveDirection.x = Input.GetAxis("Horizontal") * speed * .9f;
             animController.SetFloat("Speed", 0.0f); 
+            /* if (canJump) {
+                 if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
+                    Debug.Log("Double Jump");
+                    moveDirection.y += jumpSpeed;
+                }
+                canJump = false;
+            } */
         }
         
         // Apply gravity
@@ -98,13 +109,8 @@ public class PlayerController : MonoBehaviour
             playerIsLookingLeft = !playerIsLookingLeft;
         }
     }
-
-    // void MyDebugStuff() {
-    //     Debug.Log("----- START");
-    //     transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-    //     playerIsLookingLeft = !playerIsLookingLeft;
-    //     Debug.Log("----- END");
-
-    //     Invoke("MyDebugStuff", 10f);
-    // }
+    
+    void SetCanJumpToTrue() {
+        canJump = true;
+    }
 }
