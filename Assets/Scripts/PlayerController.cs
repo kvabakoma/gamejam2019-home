@@ -87,11 +87,9 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(Input.GetAxis("RightStickX"));
         if (Input.GetAxis("RightStickX") > 0 && playerIsLookingLeft) {
             transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            Debug.Log("turned around");
             playerIsLookingLeft = !playerIsLookingLeft;
         } else if (Input.GetAxis("RightStickX") < 0 && !playerIsLookingLeft) {
             transform.localScale = new Vector3 (transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
-            Debug.Log("turned around");
             playerIsLookingLeft = !playerIsLookingLeft;
         }
     }
