@@ -63,6 +63,48 @@ ModelImporter:
     100114: End_Leg_03_L__Goal
     100116: End_Leg_03_R__Goal
     100118: Plane
+    100120: IK
+    100122: Jnt_tail_1
+    100124: Jnt_tail_2
+    100126: Jnt_tail_3
+    100128: mixamorig_Head
+    100130: mixamorig_HeadTop_End
+    100132: mixamorig_Hips
+    100134: mixamorig_LeftArm
+    100136: mixamorig_LeftFoot
+    100138: mixamorig_LeftFoot_2
+    100140: mixamorig_LeftForeArm
+    100142: mixamorig_LeftHand
+    100144: mixamorig_LeftHandIndex1
+    100146: mixamorig_LeftHandIndex2
+    100148: mixamorig_LeftHandIndex3
+    100150: mixamorig_LeftHandIndex4
+    100152: mixamorig_LeftLeg
+    100154: mixamorig_LeftShoulder
+    100156: mixamorig_LeftToe_End
+    100158: mixamorig_LeftToeBase
+    100160: mixamorig_LeftUpLeg
+    100162: mixamorig_Neck
+    100164: mixamorig_RightArm
+    100166: mixamorig_RightFoot
+    100168: mixamorig_RightFoot_2
+    100170: mixamorig_RightForeArm
+    100172: mixamorig_RightHand
+    100174: mixamorig_RightHandIndex1
+    100176: mixamorig_RightHandIndex2
+    100178: mixamorig_RightHandIndex3
+    100180: mixamorig_RightHandIndex4
+    100182: mixamorig_RightLeg
+    100184: mixamorig_RightShoulder
+    100186: mixamorig_RightToe_End
+    100188: mixamorig_RightToeBase
+    100190: mixamorig_RightUpLeg
+    100192: mixamorig_Spine
+    100194: mixamorig_Spine1
+    100196: mixamorig_Spine2
+    100198: Null
+    100200: Root
+    100202: tail_end
     400000: End_Arm_09_L_
     400002: End_Arm_09_R_
     400004: End_Foot_03_L_
@@ -123,9 +165,55 @@ ModelImporter:
     400114: End_Leg_03_L__Goal
     400116: End_Leg_03_R__Goal
     400118: Plane
+    400120: IK
+    400122: Jnt_tail_1
+    400124: Jnt_tail_2
+    400126: Jnt_tail_3
+    400128: mixamorig_Head
+    400130: mixamorig_HeadTop_End
+    400132: mixamorig_Hips
+    400134: mixamorig_LeftArm
+    400136: mixamorig_LeftFoot
+    400138: mixamorig_LeftFoot_2
+    400140: mixamorig_LeftForeArm
+    400142: mixamorig_LeftHand
+    400144: mixamorig_LeftHandIndex1
+    400146: mixamorig_LeftHandIndex2
+    400148: mixamorig_LeftHandIndex3
+    400150: mixamorig_LeftHandIndex4
+    400152: mixamorig_LeftLeg
+    400154: mixamorig_LeftShoulder
+    400156: mixamorig_LeftToe_End
+    400158: mixamorig_LeftToeBase
+    400160: mixamorig_LeftUpLeg
+    400162: mixamorig_Neck
+    400164: mixamorig_RightArm
+    400166: mixamorig_RightFoot
+    400168: mixamorig_RightFoot_2
+    400170: mixamorig_RightForeArm
+    400172: mixamorig_RightHand
+    400174: mixamorig_RightHandIndex1
+    400176: mixamorig_RightHandIndex2
+    400178: mixamorig_RightHandIndex3
+    400180: mixamorig_RightHandIndex4
+    400182: mixamorig_RightLeg
+    400184: mixamorig_RightShoulder
+    400186: mixamorig_RightToe_End
+    400188: mixamorig_RightToeBase
+    400190: mixamorig_RightUpLeg
+    400192: mixamorig_Spine
+    400194: mixamorig_Spine1
+    400196: mixamorig_Spine2
+    400198: Null
+    400200: Root
+    400202: tail_end
     2000000: CINEMA_4D_Editor
     2100000: No Name
     2100002: Material
+    2100004: Gun
+    2100006: Hair
+    2100008: Hat
+    2100010: Boy
     2300000: Mesh_Gun
     2300002: Plane
     3300000: Mesh_Gun
@@ -201,7 +289,7 @@ ModelImporter:
       name: Run
       takeName: Run
       firstFrame: 0
-      lastFrame: 25
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

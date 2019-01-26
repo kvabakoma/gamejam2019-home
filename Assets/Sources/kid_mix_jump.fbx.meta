@@ -1,0 +1,230 @@
+fileFormatVersion: 2
+guid: 829ddd5c10e6c6b4d98e1210eb1307b5
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Gun
+    100002: IK
+    100004: Jnt_tail_1
+    100006: Jnt_tail_2
+    100008: Jnt_tail_3
+    100010: //RootNode
+    100012: Mesh_Boy
+    100014: Mesh_Gun
+    100016: Mesh_Hair
+    100018: Mesh_Hat
+    100020: mixamorig_Head
+    100022: mixamorig_HeadTop_End
+    100024: mixamorig_Hips
+    100026: mixamorig_LeftArm
+    100028: mixamorig_LeftFoot
+    100030: mixamorig_LeftFoot_2
+    100032: mixamorig_LeftForeArm
+    100034: mixamorig_LeftHand
+    100036: mixamorig_LeftHandIndex1
+    100038: mixamorig_LeftHandIndex2
+    100040: mixamorig_LeftHandIndex3
+    100042: mixamorig_LeftHandIndex4
+    100044: mixamorig_LeftLeg
+    100046: mixamorig_LeftShoulder
+    100048: mixamorig_LeftToe_End
+    100050: mixamorig_LeftToeBase
+    100052: mixamorig_LeftUpLeg
+    100054: mixamorig_Neck
+    100056: mixamorig_RightArm
+    100058: mixamorig_RightFoot
+    100060: mixamorig_RightFoot_2
+    100062: mixamorig_RightForeArm
+    100064: mixamorig_RightHand
+    100066: mixamorig_RightHandIndex1
+    100068: mixamorig_RightHandIndex2
+    100070: mixamorig_RightHandIndex3
+    100072: mixamorig_RightHandIndex4
+    100074: mixamorig_RightLeg
+    100076: mixamorig_RightShoulder
+    100078: mixamorig_RightToe_End
+    100080: mixamorig_RightToeBase
+    100082: mixamorig_RightUpLeg
+    100084: mixamorig_Spine
+    100086: mixamorig_Spine1
+    100088: mixamorig_Spine2
+    100090: Null
+    100092: Root
+    100094: tail_end
+    400000: Gun
+    400002: IK
+    400004: Jnt_tail_1
+    400006: Jnt_tail_2
+    400008: Jnt_tail_3
+    400010: //RootNode
+    400012: Mesh_Boy
+    400014: Mesh_Gun
+    400016: Mesh_Hair
+    400018: Mesh_Hat
+    400020: mixamorig_Head
+    400022: mixamorig_HeadTop_End
+    400024: mixamorig_Hips
+    400026: mixamorig_LeftArm
+    400028: mixamorig_LeftFoot
+    400030: mixamorig_LeftFoot_2
+    400032: mixamorig_LeftForeArm
+    400034: mixamorig_LeftHand
+    400036: mixamorig_LeftHandIndex1
+    400038: mixamorig_LeftHandIndex2
+    400040: mixamorig_LeftHandIndex3
+    400042: mixamorig_LeftHandIndex4
+    400044: mixamorig_LeftLeg
+    400046: mixamorig_LeftShoulder
+    400048: mixamorig_LeftToe_End
+    400050: mixamorig_LeftToeBase
+    400052: mixamorig_LeftUpLeg
+    400054: mixamorig_Neck
+    400056: mixamorig_RightArm
+    400058: mixamorig_RightFoot
+    400060: mixamorig_RightFoot_2
+    400062: mixamorig_RightForeArm
+    400064: mixamorig_RightHand
+    400066: mixamorig_RightHandIndex1
+    400068: mixamorig_RightHandIndex2
+    400070: mixamorig_RightHandIndex3
+    400072: mixamorig_RightHandIndex4
+    400074: mixamorig_RightLeg
+    400076: mixamorig_RightShoulder
+    400078: mixamorig_RightToe_End
+    400080: mixamorig_RightToeBase
+    400082: mixamorig_RightUpLeg
+    400084: mixamorig_Spine
+    400086: mixamorig_Spine1
+    400088: mixamorig_Spine2
+    400090: Null
+    400092: Root
+    400094: tail_end
+    2100000: Gun
+    2100002: Hair
+    2100004: Hat
+    2100006: Boy
+    2300000: Mesh_Gun
+    3300000: Mesh_Gun
+    4300000: Mesh_Gun
+    4300002: Mesh_Hair
+    4300004: Mesh_Hat
+    4300006: Mesh_Boy
+    7400000: CINEMA_4D_Main
+    9500000: //RootNode
+    13700000: Mesh_Boy
+    13700002: Mesh_Hair
+    13700004: Mesh_Hat
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: CINEMA_4D_Main
+      takeName: CINEMA_4D_Main
+      firstFrame: 0
+      lastFrame: 5
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

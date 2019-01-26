@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     public float bodyAdditionalAngleLeft, bodyAdditionalAngleRight;
     public Animator animController;
     public GameObject Canvas;
+    public bool playerIsLookingLeft = true, canJump, playerIsAlive = true;
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
     private CharacterController characterController;
-    private bool playerIsLookingLeft = true, canJump, playerIsAlive = true;
     
 
     // Start is called before the first frame update
@@ -74,13 +74,16 @@ public class PlayerController : MonoBehaviour
             moveDirection = transform.TransformDirection(moveDirection);
             moveDirection = moveDirection * speed;
 
+            animController.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal"))); 
+
             if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
                 moveDirection.y = jumpSpeed;
+                animController.SetTrigger("Jump"); 
                 // canJump = false;
                 // Invoke("SetCanJumpToTrue",.2f);
             }
 
-            animController.SetFloat("Speed", Mathf.Abs(Input.GetAxis("Horizontal"))); 
+            
         } else {
             Debug.Log("NOT GROUNDEEEEED");
             // movement in-air
