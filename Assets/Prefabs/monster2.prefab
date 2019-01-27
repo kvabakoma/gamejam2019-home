@@ -1061,6 +1061,7 @@ MonoBehaviour:
   enemyState: 0
   deathAnimPrefab: {fileID: 6058634677983095464, guid: 74d9bd1697c270d4196c87ad5a23c36f,
     type: 3}
+  EnemyId: 2
 --- !u!82 &2328184729893418326
 AudioSource:
   m_ObjectHideFlags: 0

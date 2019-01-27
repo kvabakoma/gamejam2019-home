@@ -145,7 +145,7 @@ ModelImporter:
     - serializedVersion: 16
       name: CINEMA_4D_Main
       takeName: CINEMA_4D_Main
-      firstFrame: 0
+      firstFrame: 9
       lastFrame: 67
       wrapMode: 0
       orientationOffsetY: 0

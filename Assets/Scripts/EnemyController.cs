@@ -12,6 +12,7 @@ public class EnemyController : MonoBehaviour
     }
     public EnemyStateEnum enemyState;
     public GameObject deathAnimPrefab;
+    public int EnemyId;
     
     private float lightAttackStartHealth;
     private GameObject Player;
