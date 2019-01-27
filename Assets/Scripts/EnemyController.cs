@@ -5,17 +5,25 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    public float health = 100;
+    public float health = 100, enemySpeed = 2f;
+    private GameObject Player;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        float direction = -1;
+        if (transform.position.x < Player.transform.position.x) {
+            direction = 1;
+        }
+        float x = transform.position.x + (enemySpeed * direction * Time.deltaTime);
+
+        transform.position = new Vector3(x, transform.position.y, transform.position.z);
     }
 
     private void OnTriggerStay(Collider other)
@@ -34,7 +42,6 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Die() {
-        Debug.Log(gameObject.name + " died");
         Destroy(gameObject);
     }
 }

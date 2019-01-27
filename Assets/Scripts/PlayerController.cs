@@ -90,7 +90,6 @@ public class PlayerController : MonoBehaviour
             
         } else {
             if (animController.GetBool("Grounded") == true) {  
-                Debug.Log("Start Jump");              
                 animController.SetBool("Grounded", false); 
             }
             // movement in-air

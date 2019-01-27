@@ -9,6 +9,8 @@ public class PlaySceneController : MonoBehaviour
     public GameObject player;
     public float monsterOffsetX = 20f;
 
+    private int enemyCount = 0;
+
     void Start() {
         SpawnEnemy ();
     }
@@ -24,7 +26,14 @@ public class PlaySceneController : MonoBehaviour
     }
 
     private void SpawnEnemy () {
-        Vector3 enemyPos = new Vector3 (player.transform.position.x + monsterOffsetX, Random.Range(4.5f,5.5f),-30f);
+        Vector3 enemyPos = new Vector3();
+        enemyCount++;
+        Debug.Log("enemyCount: " + enemyCount + " | " + enemyCount%3);
+        if (enemyCount % 3 == 0) {
+            enemyPos = new Vector3 (player.transform.position.x - monsterOffsetX * .8f, -1f, -30f);
+            GameObject newEnemy1 = Instantiate(enemyPrefabs[Random.Range (0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
+        }
+        enemyPos = new Vector3 (player.transform.position.x + monsterOffsetX, -1f, -30f);
         GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range (0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
         Invoke("SpawnEnemy", 4f);
     }
