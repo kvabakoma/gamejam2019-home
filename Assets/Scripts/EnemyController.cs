@@ -16,14 +16,17 @@ public class EnemyController : MonoBehaviour
     private float lightAttackStartHealth;
     private GameObject Player;
     private Animator animController;
+    private AudioSource audioData;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyState = EnemyStateEnum.HUNT;
         Player = GameObject.FindWithTag("Player");
-        animController = GetComponent<Animator>();        
-    }
+        animController = GetComponent<Animator>();  
+        audioData = GetComponent<AudioSource>();     
+        audioData.Pause(); 
+    }    
 
     // Update is called once per frame
     void Update()
@@ -105,7 +108,8 @@ public class EnemyController : MonoBehaviour
                 lightAttackStartHealth = health;
                 if (animController.GetBool("Hurting") == false) {  
                     animController.SetBool("Hurting", true); 
-                }
+                }                
+                audioData.UnPause();
             }
 
             health--;
@@ -139,7 +143,7 @@ public class EnemyController : MonoBehaviour
             if (animController.GetBool("Hurting") == true) {  
                 animController.SetBool("Hurting", false); 
             }
-
+            audioData.Pause();
         }
     }
 
