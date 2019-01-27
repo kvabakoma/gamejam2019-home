@@ -1358,8 +1358,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b6e5929252bde3418067ba4d819fa65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
-  enemySpeed: 2
+  health: 150
+  healthPerLightSession: 50
+  huntSpeed: 2
+  runSpeed: -20
+  attackSpeed: 4
+  currentEnemySpeed: 0
+  runAwayTime: 1.5
 --- !u!1 &1270148245
 GameObject:
   m_ObjectHideFlags: 0

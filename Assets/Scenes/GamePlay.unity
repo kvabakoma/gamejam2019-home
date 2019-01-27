@@ -1017,13 +1017,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1
       objectReference: {fileID: 0}
-    - target: {fileID: 1244716057, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1244716056, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7
+      value: 9.6
       objectReference: {fileID: 0}
     - target: {fileID: 1244716056, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1315,7 +1311,9 @@ MonoBehaviour:
   enemyPrefabs:
   - {fileID: 1244716057, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
   player: {fileID: 1167438794}
+  enemiesContainer: {fileID: 1261054969}
   monsterOffsetX: 20
+  monsterSpawnRate: 20
 --- !u!82 &1625467564
 AudioSource:
   m_ObjectHideFlags: 0

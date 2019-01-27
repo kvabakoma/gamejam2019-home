@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class PlaySceneController : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public GameObject player;
-    public float monsterOffsetX = 20f;
+    public GameObject player, enemiesContainer;
+    public float monsterOffsetX = 20f, monsterSpawnRate = 8f;
 
     private int enemyCount = 0;
 
@@ -32,9 +32,11 @@ public class PlaySceneController : MonoBehaviour
         if (enemyCount % 3 == 0) {
             enemyPos = new Vector3 (player.transform.position.x - monsterOffsetX * .8f, -1f, -30f);
             GameObject newEnemy1 = Instantiate(enemyPrefabs[Random.Range (0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
+            newEnemy1.transform.parent = enemiesContainer.transform;
         }
         enemyPos = new Vector3 (player.transform.position.x + monsterOffsetX, -1f, -30f);
         GameObject newEnemy = Instantiate(enemyPrefabs[Random.Range (0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
-        Invoke("SpawnEnemy", 4f);
+        newEnemy.transform.parent = enemiesContainer.transform;
+        Invoke("SpawnEnemy", monsterSpawnRate);
     }
 }
