@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 829ddd5c10e6c6b4d98e1210eb1307b5
+guid: 03e4838923ec698429b8c17d75d8b584
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -146,14 +146,14 @@ ModelImporter:
       name: CINEMA_4D_Main
       takeName: CINEMA_4D_Main
       firstFrame: 0
-      lastFrame: 67
+      lastFrame: 24
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 0
+      loopTime: 1
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0

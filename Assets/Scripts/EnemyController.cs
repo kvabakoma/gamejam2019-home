@@ -27,7 +27,9 @@ public class EnemyController : MonoBehaviour
             }
         } else if (other.transform.gameObject.layer == 9) {            
             Debug.Log(other.name);
-            other.transform.gameObject.GetComponent<PlayerController>().Die();
+            if (other.transform.gameObject.GetComponent<PlayerController>().playerIsAlive) {
+                other.transform.gameObject.GetComponent<PlayerController>().Defeath();
+            }
         }      
     }
 

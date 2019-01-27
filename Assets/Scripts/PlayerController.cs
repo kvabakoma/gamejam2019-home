@@ -31,7 +31,9 @@ public class PlayerController : MonoBehaviour
             Aim();
             Move();
             Flip();
-        }        
+        } else {
+            DefeathScene();
+        }
     }
 
     void Aim() {
@@ -65,6 +67,10 @@ public class PlayerController : MonoBehaviour
 
     void Move() {
         if (characterController.isGrounded) {  
+            
+            if (animController.GetBool("Grounded") == false) {  
+                animController.SetBool("Grounded", true); 
+            }
             // We are grounded, so recalculate
             // move direction directly from axes
 
@@ -78,14 +84,15 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
                 moveDirection.y = jumpSpeed;
-                animController.SetTrigger("Jump"); 
                 // canJump = false;
                 // Invoke("SetCanJumpToTrue",.2f);
             }
-
             
         } else {
-            Debug.Log("NOT GROUNDEEEEED");
+            if (animController.GetBool("Grounded") == true) {  
+                Debug.Log("Start Jump");              
+                animController.SetBool("Grounded", false); 
+            }
             // movement in-air
             moveDirection.x = Input.GetAxis("Horizontal") * speed * .9f;
             animController.SetFloat("Speed", 0.0f); 
@@ -120,9 +127,19 @@ public class PlayerController : MonoBehaviour
         canJump = true;
     }
 
-    public void Die() {
+    public void Defeath() {
+        animController.SetTrigger("Defeath");
+        animController.SetBool("IsDefeathed", true);
         playerIsAlive = false;
-        Canvas.SetActive(true);
+        // Canvas.SetActive(true);
         // Debug.Log("Sammy Lost");
     }
+
+    private void DefeathScene() {
+        if (!characterController.isGrounded) {
+            characterController.Move(new Vector3(moveDirection.x, -gravity, 0) * Time.deltaTime);
+        }
+    }
+
+    
 }
