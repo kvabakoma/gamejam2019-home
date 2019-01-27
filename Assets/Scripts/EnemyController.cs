@@ -24,6 +24,18 @@ public class EnemyController : MonoBehaviour
         float x = transform.position.x + (enemySpeed * direction * Time.deltaTime);
 
         transform.position = new Vector3(x, transform.position.y, transform.position.z);
+
+        Flip();
+    }
+
+    void Flip() {
+        if (Player.transform.position.x > transform.position.x && transform.localScale.x > 0) {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
+
+        if (Player.transform.position.x < transform.position.x && transform.localScale.x < 0) {
+            transform.localScale = new Vector3(transform.localScale.x * -1, transform.localScale.y, transform.localScale.z);
+        }
     }
 
     private void OnTriggerStay(Collider other)
