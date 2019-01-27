@@ -1058,7 +1058,8 @@ MonoBehaviour:
   runAwayTime: 1.5
   attakTreshold: 100
   enemyState: 0
-  deathAnimPrefab: {fileID: 0}
+  deathAnimPrefab: {fileID: 6058634677983095464, guid: 74d9bd1697c270d4196c87ad5a23c36f,
+    type: 3}
 --- !u!1 &3852037281784012298
 GameObject:
   m_ObjectHideFlags: 0
