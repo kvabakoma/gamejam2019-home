@@ -1017,6 +1017,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Monster1
       objectReference: {fileID: 0}
+    - target: {fileID: 1244716057, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1244716056, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 9.6
@@ -1312,8 +1316,8 @@ MonoBehaviour:
   - {fileID: 1244716057, guid: f88dfa74566f4d94fb00a6ecaf763fa5, type: 3}
   player: {fileID: 1167438794}
   enemiesContainer: {fileID: 1261054969}
-  monsterOffsetX: 20
-  monsterSpawnRate: 20
+  monsterOffsetX: 25
+  monsterSpawnRate: 5
 --- !u!82 &1625467564
 AudioSource:
   m_ObjectHideFlags: 0
@@ -5663,6 +5667,22 @@ PrefabInstance:
       propertyPath: Canvas
       value: 
       objectReference: {fileID: 2038191917}
+    - target: {fileID: 1532721358, guid: 606a33b7d9c949b49b187e2d4665885c, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532721358, guid: 606a33b7d9c949b49b187e2d4665885c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 1532721358, guid: 606a33b7d9c949b49b187e2d4665885c, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.78
+      objectReference: {fileID: 0}
+    - target: {fileID: 2108260541, guid: 606a33b7d9c949b49b187e2d4665885c, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 606a33b7d9c949b49b187e2d4665885c, type: 3}
 --- !u!1 &6845918190128775104
