@@ -30,7 +30,7 @@ public class IntroSceneManager : MonoBehaviour
 
         // Set the video to play. URL supports local absolute or relative paths.
         // Here, using absolute.
-        videoPlayer.url = "Assets/Sources/INTRO_sound.mp4";
+        videoPlayer.url = "C:/INTRO_sound.mp4";
         // videoPlayer.url = Resources.Load("INTRO.mp4");
 
         // Skip the first 100 frames.
