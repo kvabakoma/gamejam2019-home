@@ -9,8 +9,10 @@ public class PlayerController : MonoBehaviour
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public float bodyAdditionalAngleLeft, bodyAdditionalAngleRight;
+    public float pushPower = 4.0f;
     public Animator animController;
-    public GameObject Canvas;
+    public GameObject LoseScreen;
+    public GameObject FleshLight;
     public bool playerIsLookingLeft = true, canJump, playerIsAlive = true;
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
@@ -20,6 +22,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        FleshLight.SetActive(false);
         startRotation = Bone.transform.localEulerAngles;
         characterController = GetComponent<CharacterController>();
     }
@@ -34,6 +37,8 @@ public class PlayerController : MonoBehaviour
         } else {
             DefeathScene();
         }
+
+        Shoot();
     }
 
     void Aim() {
@@ -60,9 +65,6 @@ public class PlayerController : MonoBehaviour
             Bone.transform.localEulerAngles = controllerAngle;            
             // Debug.Log(Bone.transform.eulerAngles + " | " + Bone.transform.localEulerAngles);
         }
-
-        // Debug.Log("H: " + Input.GetAxis("Horizontal") + " | V: " + Input.GetAxis("Vertical"));
-        // Debug.Log("HR: " + Input.GetAxis("RightStickX") + " | VR: " + Input.GetAxis("RightStickY"));
     }
 
     void Move() {
@@ -71,10 +73,6 @@ public class PlayerController : MonoBehaviour
             if (animController.GetBool("Grounded") == false) {  
                 animController.SetBool("Grounded", true); 
             }
-            // We are grounded, so recalculate
-            // move direction directly from axes
-
-            // canJump = true;
 
             moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0.0f, 0.0f);
             moveDirection = transform.TransformDirection(moveDirection);
@@ -84,8 +82,6 @@ public class PlayerController : MonoBehaviour
 
             if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
                 moveDirection.y = jumpSpeed;
-                // canJump = false;
-                // Invoke("SetCanJumpToTrue",.2f);
             }
             
         } else {
@@ -95,13 +91,6 @@ public class PlayerController : MonoBehaviour
             // movement in-air
             moveDirection.x = Input.GetAxis("Horizontal") * speed * .9f;
             animController.SetFloat("Speed", 0.0f); 
-            /* if (canJump) {
-                 if (Input.GetButton("Jump") || Input.GetAxis("JoystickJump") == 1) {
-                    Debug.Log("Double Jump");
-                    moveDirection.y += jumpSpeed;
-                }
-                canJump = false;
-            } */
         }
         
         // Apply gravity
@@ -122,22 +111,45 @@ public class PlayerController : MonoBehaviour
         }
     }
     
-    void SetCanJumpToTrue() {
-        canJump = true;
+    void Shoot() {
+        if (Input.GetAxis("JoystickAttack") == 1) {
+            FleshLight.SetActive(true);
+        } else {
+            FleshLight.SetActive(false);
+        }
+    }
+    
+    void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        Rigidbody body = hit.collider.attachedRigidbody;
+
+        // no rigidbody
+        if (body == null || body.isKinematic)
+        {
+            return;
+        }
+
+        Vector3 pushDir = new Vector3(hit.moveDirection.x, 0, hit.moveDirection.z);
+
+        // Apply the push
+        body.velocity = pushDir * pushPower;
     }
 
     public void Defeath() {
         animController.SetTrigger("Defeath");
         animController.SetBool("IsDefeathed", true);
         playerIsAlive = false;
-        // Canvas.SetActive(true);
-        // Debug.Log("Sammy Lost");
+        Invoke("ShowDefeatScreen", 3f);
     }
 
     private void DefeathScene() {
         if (!characterController.isGrounded) {
             characterController.Move(new Vector3(moveDirection.x, -gravity, 0) * Time.deltaTime);
         }
+    }
+
+    private void ShowDefeatScreen() {
+        LoseScreen.SetActive(true);
     }
 
     

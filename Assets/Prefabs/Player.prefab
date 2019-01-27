@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1532721357}
   m_LocalRotation: {x: -0.03654672, y: -0.007882333, z: -0.70259625, w: 0.71060586}
-  m_LocalPosition: {x: 1.5500005, y: 1.2919916, z: 3.8121948}
+  m_LocalPosition: {x: 1.55, y: 1.33, z: 0.78}
   m_LocalScale: {x: 100.00036, y: 100.00049, z: 100.00039}
   m_Children:
   - {fileID: 2108260541}
@@ -99,7 +99,7 @@ Transform:
   m_GameObject: {fileID: 2108260540}
   m_LocalRotation: {x: 0.000000014901156, y: 0.000000014901156, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.06000007, y: 0.0600001, z: 0.22}
+  m_LocalScale: {x: 0.06000007, y: 0.0600001, z: 0.2}
   m_Children: []
   m_Father: {fileID: 1532721358}
   m_RootOrder: 0
@@ -366,8 +366,10 @@ MonoBehaviour:
   gravity: 40
   bodyAdditionalAngleLeft: -180
   bodyAdditionalAngleRight: 90
+  pushPower: 6
   animController: {fileID: 6386081566002394882}
-  Canvas: {fileID: 0}
+  LoseScreen: {fileID: 0}
+  FleshLight: {fileID: 1532721357}
   playerIsLookingLeft: 1
   canJump: 0
   playerIsAlive: 1

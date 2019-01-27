@@ -5,22 +5,24 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {
 
-    public float health = 100, healthPerLightSession = 50, huntSpeed, runSpeed, attackSpeed, currentEnemySpeed, runAwayTime;
+    public float health = 100, healthPerLightSession = 50, huntSpeed, runSpeed, attackSpeed, currentEnemySpeed, runAwayTime, attakTreshold;
     public enum EnemyStateEnum
     {
         HUNT, INLIGHT, RUN, ATTACK, DEAD
     }
     public EnemyStateEnum enemyState;
+    public GameObject deathAnimPrefab;
     
     private float lightAttackStartHealth;
     private GameObject Player;
+    private Animator animController;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyState = EnemyStateEnum.HUNT;
         Player = GameObject.FindWithTag("Player");
-        
+        animController = GetComponent<Animator>();        
     }
 
     // Update is called once per frame
@@ -55,25 +57,21 @@ public class EnemyController : MonoBehaviour
 
 
     void Hunt() {
-        print ("HUNT STATE");
         currentEnemySpeed = huntSpeed;
-        if (health < healthPerLightSession && ((transform.localScale.x < 0 && Player.transform.localScale.x < 0) || (transform.localScale.x > 0 && Player.transform.localScale.x > 0))) {
+        if (health < attakTreshold && ((transform.localScale.x < 0 && Player.transform.localScale.x < 0) || (transform.localScale.x > 0 && Player.transform.localScale.x > 0))) {
             enemyState = EnemyStateEnum.ATTACK;
         }
     }
 
-    void Run() {
-        print ("RUN STATE");
+    void Run() {        
         currentEnemySpeed = runSpeed;
     }
 
     void EnemyInLight() {
-        print ("INLIGHT STATE");
         currentEnemySpeed = 0f;
     }
 
     void Attack() {
-        print ("ATTACK STATE");
         currentEnemySpeed = attackSpeed;
     }
 
@@ -105,11 +103,12 @@ public class EnemyController : MonoBehaviour
             if (enemyState == EnemyStateEnum.HUNT || enemyState == EnemyStateEnum.ATTACK) {
                 enemyState = EnemyStateEnum.INLIGHT;
                 lightAttackStartHealth = health;
-                print("start health: " + lightAttackStartHealth);
+                if (animController.GetBool("Hurting") == false) {  
+                    animController.SetBool("Hurting", true); 
+                }
             }
 
             health--;
-            print("health: " + health);
 
             if (lightAttackStartHealth - health >= healthPerLightSession) {
                 enemyState = EnemyStateEnum.RUN;
@@ -126,13 +125,21 @@ public class EnemyController : MonoBehaviour
             if (other.transform.gameObject.GetComponent<PlayerController>().playerIsAlive) {    // enemy caught player
                 other.transform.gameObject.GetComponent<PlayerController>().Defeath();
             }
-        }      
+            if (animController.GetBool("Hurting") == true) {  
+                animController.SetBool("Hurting", false); 
+            }
+        }    
     }
 
     private void OnTriggerExit(Collider other)
     {
         if (other.transform.gameObject.layer == 12) {
             if (enemyState == EnemyStateEnum.INLIGHT) enemyState = EnemyStateEnum.HUNT; 
+
+            if (animController.GetBool("Hurting") == true) {  
+                animController.SetBool("Hurting", false); 
+            }
+
         }
     }
 
@@ -143,6 +150,9 @@ public class EnemyController : MonoBehaviour
     }
 
     private void Die() {
+        GameObject deadEnemy = Instantiate(deathAnimPrefab, transform.position, Quaternion.identity);
+        deadEnemy.transform.parent = transform.parent;
+        deadEnemy.transform.localScale = transform.localScale;
         Destroy(gameObject);
     }
 }

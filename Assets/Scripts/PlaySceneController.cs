@@ -29,7 +29,7 @@ public class PlaySceneController : MonoBehaviour
         Vector3 enemyPos = new Vector3();
         enemyCount++;
         // Debug.Log("enemyCount: " + enemyCount + " | " + enemyCount%3);
-        if (enemyCount % 3 == 0) {
+        if (enemyCount % 2 == 0) {
             enemyPos = new Vector3 (player.transform.position.x - monsterOffsetX * .8f, -1f, -30f);
             GameObject newEnemy1 = Instantiate(enemyPrefabs[Random.Range (0, enemyPrefabs.Length)], enemyPos, Quaternion.identity);
             newEnemy1.transform.parent = enemiesContainer.transform;
