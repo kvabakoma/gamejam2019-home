@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class PlaySceneController : MonoBehaviour
 {
     public GameObject[] enemyPrefabs;
-    public GameObject player, enemiesContainer;
+    public GameObject player, enemiesContainer, escapeMenu;
     public float monsterOffsetX = 20f, monsterSpawnRate = 8f;
 
     private int enemyCount = 0;
@@ -16,14 +16,31 @@ public class PlaySceneController : MonoBehaviour
     }
 
     void Update() {
-        if (!player.GetComponent<PlayerController>().playerIsAlive && (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 2"))) {
-            RestartGame();
+        if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown("joystick button 7")) {
+            escapeMenu.SetActive(!escapeMenu.activeInHierarchy);
+        }
+
+        if (escapeMenu.activeInHierarchy) {
+            if (Input.GetKeyDown("joystick button 2")) {
+                RestartGame();
+            }
+            if (Input.GetKeyDown("joystick button 3")) {
+                QuitGame();
+            }
         }
     }
 
     public void RestartGame() {
         SceneManager.LoadScene("GamePlay");
     }
+
+    public void QuitGame() {
+        Application.Quit();
+    }
+
+    // private void ToggleMenu() {
+        
+    // }
 
     private void SpawnEnemy () {
         Vector3 enemyPos = new Vector3();
