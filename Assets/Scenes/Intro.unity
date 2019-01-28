@@ -210,6 +210,7 @@ MonoBehaviour:
   OpeningPage: {fileID: 1112027079}
   Button: {fileID: 2027963164}
   Music: {fileID: 819288750}
+  videoClip: {fileID: 32900000, guid: 20733b11648808741b8dcef2ca7fbcb7, type: 3}
 --- !u!1 &819288750
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,9 +7,11 @@ public class IntroSceneManager : MonoBehaviour
 {
 
     public GameObject OpeningPage, Button, Music;
+    public UnityEngine.Video.VideoClip videoClip;
+    
 
     void Start()
-    {
+    {        
         // Will attach a VideoPlayer to the main camera.
         GameObject camera = GameObject.Find("Main Camera");
 
@@ -30,7 +32,10 @@ public class IntroSceneManager : MonoBehaviour
 
         // Set the video to play. URL supports local absolute or relative paths.
         // Here, using absolute.
-        videoPlayer.url = "C:/INTRO_sound.mp4";
+
+        // videoClip = Resources.Load<UnityEngine.Video.VideoClip>("INTRO_sound.mp4") as UnityEngine.Video.VideoClip;
+        videoPlayer.clip = videoClip;
+        // videoPlayer.url = "Assets/Resources/INTRO_sound.mp4";
         // videoPlayer.url = Resources.Load("INTRO.mp4");
 
         // Skip the first 100 frames.

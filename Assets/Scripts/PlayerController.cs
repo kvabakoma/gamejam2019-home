@@ -17,20 +17,26 @@ public class PlayerController : MonoBehaviour
 
     private Vector3 startRotation, moveDirection = Vector3.zero;
     private CharacterController characterController;
-    private bool gamepadIsConnected = true;
+    private bool gamepadIsConnected = false;
     private RaycastHit mousePosHit; 
     
     void Awake() {
-        Debug.Log(Input.GetJoystickNames().Length);
+        if (Input.GetJoystickNames().Length > 0) {
+            gamepadIsConnected = true;
+        } else {
+            FleshLight.transform.position = new Vector3 (FleshLight.transform.position.x - 0.55f, FleshLight.transform.position.y, FleshLight.transform.position.z);
+        }
+        /* 
+        Debug.Log("JOYSTICK LENGHT" + Input.GetJoystickNames().Length);
         string[] names = Input.GetJoystickNames();
         for (int x = 0; x < names.Length; x++)
         {
-            print(names[x].Length);
-            if (names[x].Length != 33) {            
+            Debug.Log("HAS HJOYSTICK: " + names[x].Length);
+            if (names[x].Length > 1) {            
                 gamepadIsConnected = false;
-                FleshLight.transform.position = new Vector3 (FleshLight.transform.position.x - 0.55f, FleshLight.transform.position.y, FleshLight.transform.position.z);
+                
             }
-        }
+        } */
     }
 
     // Start is called before the first frame update
@@ -57,7 +63,7 @@ public class PlayerController : MonoBehaviour
 
     void Aim() {
         if (gamepadIsConnected) {
-            print("gamepad");
+            
             float x = Input.GetAxis("RightStickX");
             float y = Input.GetAxis("RightStickY");
             if (x != 0.0f || y != 0.0f) {
@@ -82,31 +88,7 @@ public class PlayerController : MonoBehaviour
                 // Debug.Log(Bone.transform.eulerAngles + " | " + Bone.transform.localEulerAngles);
             }
         } else {
-            print("no gamepad");
-            /* // Generate a plane that intersects the transform's position with an upwards normal.
-            Plane playerPlane = new Plane(Vector3.up, Bone.transform.position);
-    
-            // Generate a ray from the cursor position
-            Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
-    
-            // Determine the point where the cursor ray intersects the plane.
-            // This will be the point that the object must look towards to be looking at the mouse.
-            // Raycasting to a Plane object only gives us a distance, so we'll have to take the distance,
-            //   then find the point along that ray that meets that distance.  This will be the point
-            //   to look at.
-            float hitdist = 0.0f;
-            // If the ray is parallel to the plane, Raycast will return false.
-            if (playerPlane.Raycast (ray, out hitdist)) 
-            {
-                // Get the point along the ray that hits the calculated distance.
-                Vector3 targetPoint = ray.GetPoint(hitdist);
-    
-                // Determine the target rotation.  This is the rotation if the transform looks at the target point.
-                Quaternion targetRotation = Quaternion.LookRotation(targetPoint - transform.position);
-    
-                // Smoothly rotate towards the target point.
-                Bone.transform.rotation = Quaternion.Slerp(Bone.transform.rotation, targetRotation, speed * Time.deltaTime);
-            } */
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             Debug.DrawRay(ray.origin, ray.direction * 33, Color.yellow);
                          
@@ -114,19 +96,10 @@ public class PlayerController : MonoBehaviour
             if (Physics.Raycast(ray, out mousePosHit, 50, 1 << LayerMask.NameToLayer("mousePosDetector"))) {
                 
                 if (mousePosHit.transform.gameObject.layer == 14) {
-                    Debug.Log("Ground");
                     Debug.Log(mousePosHit);
-                    // Make a path
-                } else {
-                    Debug.Log("Other Objects");
-                    // Do whatever you want
                 }
             }
             Bone.transform.LookAt(mousePosHit.point);
-            // Vector3 mouseScreenPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            // Debug.Log(mouseScreenPosition);
-            // Vector3 lookAt = mouseScreenPosition;
-            // Bone.transform.localEulerAngles = lookAt;
         }
         
     }
